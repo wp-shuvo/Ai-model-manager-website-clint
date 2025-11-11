@@ -30,7 +30,7 @@ const Login = () => {
         toast.error(error.message);
       });
   };
-
+  //login with google
   const handleGoogleLogin = () => {
     singInWithGoogle()
       .then(result => {
