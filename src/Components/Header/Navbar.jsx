@@ -1,9 +1,21 @@
 import React, { use } from 'react';
 import { AuthContext } from '../../Context/AuthContext';
 import { Link, NavLink } from 'react-router';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
-  const { user } = use(AuthContext);
+  const { user, singOutUser } = use(AuthContext);
+
+  //SingOut Or LogOut user
+  const handleSingOut = () => {
+    singOutUser()
+      .then(() => {
+        toast.success('sing-out succesful.');
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+  };
 
   // navlinks
   const links = (
@@ -96,14 +108,14 @@ const Navbar = () => {
         </div>
         {user ? (
           <a
-            // onClick={handleSingOut}
+            onClick={handleSingOut}
             className="px-5 py-2 rounded-lg border border-[#9F62F2] text-[#9F62F2] font-semibold hover:bg-[#9F62F2] hover:text-white transition"
           >
             LogOut
           </a>
         ) : (
           <Link
-            // to="/login"
+            to="/login"
             className="px-5 py-2 rounded-lg border border-[#9F62F2] text-[#9F62F2] font-semibold hover:bg-[#9F62F2] hover:text-white transition"
           >
             Login

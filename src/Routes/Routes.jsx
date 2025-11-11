@@ -4,6 +4,8 @@ import MainLayouts from '../Layouts/MainLayouts';
 import Home from '../Pages/Home';
 import { createBrowserRouter } from 'react-router';
 import AllModels from '../Pages/AllModels';
+import Login from '../Components/LoginOut/Login';
+import Register from '../Components/LoginOut/Register';
 
 const Routes = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const Routes = createBrowserRouter([
       {
         path: '/allmodels',
         element: <AllModels />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
+      },
+      {
+        path: '/register',
+        element: <Register />,
       },
     ],
   },
