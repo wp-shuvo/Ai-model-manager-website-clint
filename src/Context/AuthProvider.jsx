@@ -70,6 +70,7 @@ const AuthProvider = ({ children }) => {
     forgetPassword,
     errorInvalid,
     setErrorInvalid,
+    setUser,
   };
   return <AuthContext value={authinfo}>{children}</AuthContext>;
 };

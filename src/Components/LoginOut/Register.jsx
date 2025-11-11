@@ -52,7 +52,7 @@ const Register = () => {
 
     createUser(email, password)
       .then(result => {
-        console.log(result.user);
+        // console.log(result.user);
         setErrorInvalid('');
         // const newUser = {
         //   name: name,
@@ -85,7 +85,7 @@ const Register = () => {
       })
       .catch(error => {
         console.log(error.message);
-        toast.error(error.message);
+        toast.error('email already in use');
       });
   };
 
