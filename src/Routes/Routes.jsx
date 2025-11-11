@@ -1,7 +1,9 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router';
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
 import MainLayouts from '../Layouts/MainLayouts';
+import Home from '../Pages/Home';
+import { createBrowserRouter } from 'react-router';
+import AllModels from '../Pages/AllModels';
 
 const Routes = createBrowserRouter([
   {
@@ -19,12 +21,8 @@ const Routes = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'login',
-        element: <Login />,
-      },
-      {
-        path: 'register',
-        element: <Register />,
+        path: '/allmodels',
+        element: <AllModels />,
       },
     ],
   },

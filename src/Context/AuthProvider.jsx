@@ -13,7 +13,7 @@ import {
 
 const googleProvider = new GoogleAuthProvider();
 
-const AuthProvider = ({ Children }) => {
+const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setloading] = useState(true);
   const [errorInvalid, setErrorInvalid] = useState('');
@@ -71,7 +71,7 @@ const AuthProvider = ({ Children }) => {
     errorInvalid,
     setErrorInvalid,
   };
-  return <AuthContext value={authinfo}>{Children}</AuthContext>;
+  return <AuthContext value={authinfo}>{children}</AuthContext>;
 };
 
 export default AuthProvider;
