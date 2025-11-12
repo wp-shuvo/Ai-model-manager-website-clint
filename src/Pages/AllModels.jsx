@@ -26,7 +26,7 @@ const AllModels = () => {
           Models{' '}
         </span>
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto gap-6 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto gap-6 ">
         {aiModels?.map(aiModel => (
           <ModelCard key={aiModel._id} aiModel={aiModel} />
         ))}

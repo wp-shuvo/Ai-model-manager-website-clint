@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { useLoaderData, useNavigate } from 'react-router';
-import swal from 'sweetalert';
+import { Link, useLoaderData, useNavigate } from 'react-router';
 import { AuthContext } from '../../Context/AuthContext';
+import Swal from 'sweetalert2';
 
 const ModelDetails = () => {
   const model = useLoaderData();
@@ -20,7 +20,7 @@ const ModelDetails = () => {
     createdBy,
   } = model;
 
-  // 🛒 Handle purchase
+  // Handle purchase
   const handlePurchase = async () => {
     try {
       const purchaseData = {
@@ -63,37 +63,36 @@ const ModelDetails = () => {
     }
   };
 
-  // 🗑️ Handle delete
+  // Handle delete
   const handleDelete = async () => {
-    const confirmDelete = await swal({
+    Swal.fire({
       title: 'Are you sure?',
-      text: 'Once deleted, you will not be able to recover this model!',
+      text: "You won't be able to revert this!",
       icon: 'warning',
-      buttons: true,
-      dangerMode: true,
-    });
-
-    if (confirmDelete) {
-      try {
-        const res = await fetch(`http://localhost:5001/models/${_id}`, {
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then(result => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5001/models/${_id}`, {
           method: 'DELETE',
-        });
-
-        if (res.ok) {
-          swal('Deleted!', 'Model has been deleted.', 'success');
-          navigate('/allmodels');
-        } else {
-          swal('Error', 'Failed to delete model.', 'error');
-        }
-      } catch (error) {
-        console.error(error);
-        swal('Error', 'Something went wrong.', 'error');
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log('delete a bid', data);
+            if (data.deletedCount) {
+              Swal.fire({
+                title: 'Deleted!',
+                text: 'Your Model has been deleted.',
+                icon: 'success',
+              });
+            }
+            navigate('/allmodels');
+          });
       }
-    }
+    });
   };
-
-  // 🖊️ Handle edit redirect
-  const handleEdit = () => navigate(`/editmodel/${_id}`);
 
   return (
     <div className="max-w-5xl mx-auto my-10 bg-white shadow-md rounded-lg overflow-hidden border border-gray-200">
@@ -101,7 +100,7 @@ const ModelDetails = () => {
         {/* Image */}
         <div className="md:w-1/2 bg-gray-50 flex justify-center items-center">
           <img
-            src={image || '/placeholder.png'}
+            src={image}
             alt={name}
             className="w-full h-80 object-contain p-4"
           />
@@ -139,12 +138,12 @@ const ModelDetails = () => {
             {/*Buttons for Creator */}
             {user?.email === createdBy && (
               <>
-                <button
-                  onClick={handleEdit}
+                <Link
+                  to={`/updatemodel/${_id}`}
                   className="px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
                 >
-                  Edit
-                </button>
+                  Update
+                </Link>
                 <button
                   onClick={handleDelete}
                   className="px-5 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition"

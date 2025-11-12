@@ -8,6 +8,8 @@ import Login from '../Components/LoginOut/Login';
 import Register from '../Components/LoginOut/Register';
 import PrivateRoutes from './PrivateRoutes';
 import ModelDetails from '../Components/AiModels/ModelDetails';
+import AddModel from '../Pages/AddModel';
+import UpdateModel from '../Components/AiModels/UpdateModel';
 
 const Routes = createBrowserRouter([
   {
@@ -43,6 +45,24 @@ const Routes = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <ModelDetails />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: '/updatemodel/:id',
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/modeldetails/${params.id}`),
+        element: (
+          <PrivateRoutes>
+            <UpdateModel />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: '/addmodel',
+        element: (
+          <PrivateRoutes>
+            <AddModel />
           </PrivateRoutes>
         ),
       },

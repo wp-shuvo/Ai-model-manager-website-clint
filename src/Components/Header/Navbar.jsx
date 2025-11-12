@@ -44,9 +44,9 @@ const Navbar = () => {
         <>
           <li>
             <NavLink
-              // to="/addmodels
+              to="/addmodel"
               className={({ isActive }) =>
-                `font-semibold ${isActive ? 'text-white' : 'text-[#9F62F2]'}`
+                `font-semibold ${isActive ? 'text-[#9F62F2]' : 'text-white'}`
               }
             >
               Add Model
