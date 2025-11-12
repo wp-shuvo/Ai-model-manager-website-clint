@@ -86,7 +86,9 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="font-extrabold text-xl">AI Model Manager</a>
+        <Link to="/" className="font-extrabold text-xl">
+          AI Model Manager
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -96,17 +98,65 @@ const Navbar = () => {
       </div>
       <div className="navbar-end flex gap-3">
         <div className="relative flex flex-col items-center mr-3.5 group">
-          {user && (
+          {user ? (
             <>
-              <img
-                className="h-10 w-10 rounded-full border-2 border-[#9F62F2] group-hover:scale-105 transition-transform duration-200"
-                src={user?.photoURL}
-                alt="Profile Picture"
-              />
+              <div className="dropdown dropdown-end">
+                <div tabIndex={0} role="button" className="m-1">
+                  <img
+                    className="h-10 w-10 rounded-full border-2 border-[#9F62F2] group-hover:scale-105 transition-transform duration-200"
+                    src={user?.photoURL}
+                    alt="Profile Picture"
+                  />
+                </div>
+                <ul
+                  tabIndex="-1"
+                  className="dropdown-content gap-y-1.5 menu bg-base-100 rounded-box z-50 w-52 p-2 shadow-sm"
+                >
+                  <li className="text-[#ffffff] text-lg font-semibold">
+                    {user?.displayName}
+                  </li>
+                  <li className="text-[#ffffff] font-semibold mb-2">
+                    {user?.email}
+                  </li>
+
+                  <li>
+                    <Link
+                      to="/mymodels"
+                      className="px-5 py-2 rounded-lg border border-[#9F62F2] text-[#9F62F2] font-semibold hover:bg-[#9F62F2] hover:text-white transition"
+                    >
+                      My Ai Model
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      // to="/mymodels"
+                      className="px-5 py-2 rounded-lg border border-[#9F62F2] text-[#9F62F2] font-semibold hover:bg-[#9F62F2] hover:text-white transition"
+                    >
+                      Model Purchase
+                    </Link>
+                  </li>
+                  <li>
+                    <a
+                      onClick={handleSingOut}
+                      className="px-5 py-2 rounded-lg border border-[#9F62F2] text-[#9F62F2] font-semibold hover:bg-[#9F62F2] hover:text-white transition"
+                    >
+                      LogOut
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </>
+          ) : (
+            <Link
+              to="/login"
+              className="px-5 py-2 rounded-lg border border-[#9F62F2] text-[#9F62F2] font-semibold hover:bg-[#9F62F2] hover:text-white transition"
+            >
+              Login
+            </Link>
           )}
         </div>
-        {user ? (
+
+        {/* {user ? (
           <a
             onClick={handleSingOut}
             className="px-5 py-2 rounded-lg border border-[#9F62F2] text-[#9F62F2] font-semibold hover:bg-[#9F62F2] hover:text-white transition"
@@ -120,7 +170,7 @@ const Navbar = () => {
           >
             Login
           </Link>
-        )}
+        )} */}
       </div>
     </div>
   );

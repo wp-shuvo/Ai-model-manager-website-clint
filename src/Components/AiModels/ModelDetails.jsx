@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router';
 import { AuthContext } from '../../Context/AuthContext';
 import Swal from 'sweetalert2';
+import swal from 'sweetalert';
 
 const ModelDetails = () => {
   const model = useLoaderData();

@@ -10,6 +10,7 @@ import PrivateRoutes from './PrivateRoutes';
 import ModelDetails from '../Components/AiModels/ModelDetails';
 import AddModel from '../Pages/AddModel';
 import UpdateModel from '../Components/AiModels/UpdateModel';
+import MyModel from '../Components/AiModels/MyModel';
 
 const Routes = createBrowserRouter([
   {
@@ -63,6 +64,14 @@ const Routes = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <AddModel />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: '/mymodels',
+        element: (
+          <PrivateRoutes>
+            <MyModel />
           </PrivateRoutes>
         ),
       },
