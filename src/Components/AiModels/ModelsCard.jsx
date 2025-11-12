@@ -8,7 +8,7 @@ const ModelsCard = ({ model }) => {
       <img
         src={image}
         alt={name}
-        className="w-full h-48 object-contain rounded-lg mb-4 bg-gray-100"
+        className="w-48 h-48 object-contain mx-auto rounded-full mb-4 bg-gray-100"
       />
       <h3 className="text-xl font-semibold text-gray-800 mb-2">{name}</h3>
       <p className="text-sm text-gray-500  mb-3">{framework}</p>

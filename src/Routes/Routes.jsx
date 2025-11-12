@@ -6,6 +6,8 @@ import { createBrowserRouter } from 'react-router';
 import AllModels from '../Pages/AllModels';
 import Login from '../Components/LoginOut/Login';
 import Register from '../Components/LoginOut/Register';
+import PrivateRoutes from './PrivateRoutes';
+import ModelDetails from '../Components/AiModels/ModelDetails';
 
 const Routes = createBrowserRouter([
   {
@@ -33,6 +35,16 @@ const Routes = createBrowserRouter([
       {
         path: '/register',
         element: <Register />,
+      },
+      {
+        path: '/modeldetails/:id',
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/modeldetails/${params.id}`),
+        element: (
+          <PrivateRoutes>
+            <ModelDetails />
+          </PrivateRoutes>
+        ),
       },
     ],
   },

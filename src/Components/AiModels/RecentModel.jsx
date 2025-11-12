@@ -1,5 +1,6 @@
 import React, { use } from 'react';
 import ModelsCard from './ModelsCard';
+import { Link } from 'react-router';
 
 const RecentModel = ({ LatestmodelsPromise }) => {
   const models = use(LatestmodelsPromise);
@@ -19,6 +20,12 @@ const RecentModel = ({ LatestmodelsPromise }) => {
           <ModelsCard key={model._id} model={model} />
         ))}
       </div>
+      <Link
+        to="/allmodels"
+        className="mt-6 inline-block text-center w-[15%] py-2 rounded-md bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white text-xl font-semibold hover:opacity-90 transition"
+      >
+        View Details
+      </Link>
     </div>
   );
 };
