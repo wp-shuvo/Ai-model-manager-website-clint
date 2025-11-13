@@ -24,13 +24,16 @@ const UpdateModel = () => {
 
     console.log('Add New Model data', newModel);
 
-    fetch(`https://ai-model-manager-bd-server.vercel.app/update-model/${_id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newModel),
-    })
+    fetch(
+      `https://ai-model-manager-server-k5f7.vercel.app/update-model/${_id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newModel),
+      }
+    )
       .then(res => res.json())
       .then(() => {
         toast.success('✅ Successfully Update Model!');

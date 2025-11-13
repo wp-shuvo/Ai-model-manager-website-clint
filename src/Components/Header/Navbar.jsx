@@ -155,22 +155,6 @@ const Navbar = () => {
             </Link>
           )}
         </div>
-
-        {/* {user ? (
-          <a
-            onClick={handleSingOut}
-            className="px-5 py-2 rounded-lg border border-[#9F62F2] text-[#9F62F2] font-semibold hover:bg-[#9F62F2] hover:text-white transition"
-          >
-            LogOut
-          </a>
-        ) : (
-          <Link
-            to="/login"
-            className="px-5 py-2 rounded-lg border border-[#9F62F2] text-[#9F62F2] font-semibold hover:bg-[#9F62F2] hover:text-white transition"
-          >
-            Login
-          </Link>
-        )} */}
       </div>
     </div>
   );

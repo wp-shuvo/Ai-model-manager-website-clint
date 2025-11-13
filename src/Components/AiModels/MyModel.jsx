@@ -10,7 +10,7 @@ const MyModel = () => {
   useEffect(() => {
     if (user?.email) {
       fetch(
-        `https://ai-model-manager-bd-server.vercel.app/mymodels?email=${user.email}`
+        `https://ai-model-manager-server-k5f7.vercel.app/mymodels?email=${user.email}`
       )
         .then(res => res.json())
         .then(data => {

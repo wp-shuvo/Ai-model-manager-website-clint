@@ -8,7 +8,7 @@ const AllModels = () => {
 
   useEffect(() => {
     axios
-      .get('https://ai-model-manager-bd-server.vercel.app/models')
+      .get('https://ai-model-manager-server-k5f7.vercel.app/models')
       .then(res => {
         console.log('after axios get ', res.data);
         setModels(res.data);
@@ -35,7 +35,7 @@ const AllModels = () => {
 
     axios
       .get(
-        `https://ai-model-manager-bd-server.vercel.app/search?search=${search_text}`
+        `https://ai-model-manager-server-k5f7.vercel.app/search?search=${search_text}`
       )
       .then(res => {
         setModels(res.data);

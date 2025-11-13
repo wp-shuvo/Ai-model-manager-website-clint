@@ -35,7 +35,7 @@ const ModelDetails = () => {
       };
 
       const res = await fetch(
-        'https://ai-model-manager-bd-server.vercel.app/purchasedModels',
+        'https://ai-model-manager-server-k5f7.vercel.app/purchasedModels',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -45,7 +45,7 @@ const ModelDetails = () => {
 
       if (res.ok) {
         const updateRes = await fetch(
-          `https://ai-model-manager-bd-server.vercel.app/models/${_id}/purchase`,
+          `https://ai-model-manager-server-k5f7.vercel.app/models/${_id}/purchase`,
           {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
@@ -79,7 +79,7 @@ const ModelDetails = () => {
       confirmButtonText: 'Yes, delete it!',
     }).then(result => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5001/models/${_id}`, {
+        fetch(`https://ai-model-manager-server-k5f7.vercel.app/models/${_id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())
