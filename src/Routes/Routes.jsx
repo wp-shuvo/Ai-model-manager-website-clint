@@ -11,6 +11,7 @@ import ModelDetails from '../Components/AiModels/ModelDetails';
 import AddModel from '../Pages/AddModel';
 import UpdateModel from '../Components/AiModels/UpdateModel';
 import MyModel from '../Components/AiModels/MyModel';
+import ModelPurchase from '../Components/AiModels/ModelPurchase';
 
 const Routes = createBrowserRouter([
   {
@@ -72,6 +73,14 @@ const Routes = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <MyModel />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: '/modelPurchase',
+        element: (
+          <PrivateRoutes>
+            <ModelPurchase />
           </PrivateRoutes>
         ),
       },

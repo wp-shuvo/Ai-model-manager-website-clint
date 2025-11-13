@@ -29,6 +29,8 @@ const ModelDetails = () => {
         name,
         framework,
         useCase,
+        createdBy,
+        image,
         buyerEmail: user?.email,
       };
 
