@@ -56,7 +56,7 @@ const BannerSlider = () => {
                 {slide.subtext}
               </p>
               <Link
-                to="/login"
+                to="/addmodel"
                 className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-lg hover:opacity-90 transition text-white px-5 py-2 rounded-full transition"
               >
                 {slide.button}

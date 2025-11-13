@@ -32,7 +32,7 @@ const ModelDetails = () => {
         buyerEmail: user?.email,
       };
 
-      // 1️⃣ Add to purchasedModels collection
+      // Add to purchasedModels collection
       const res = await fetch('http://localhost:5001/purchasedModels', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -40,7 +40,7 @@ const ModelDetails = () => {
       });
 
       if (res.ok) {
-        // 2️⃣ Increment purchase count
+        //Increment purchase count
         const updateRes = await fetch(
           `http://localhost:5001/models/${_id}/purchase`,
           {
@@ -56,7 +56,7 @@ const ModelDetails = () => {
           swal('Error', 'Failed to update purchase count', 'error');
         }
       } else {
-        swal('Error', 'Failed to purchase model', 'error');
+        swal('Error', 'All Ready Purchas This Model', 'error');
       }
     } catch (error) {
       console.error(error);
@@ -121,6 +121,10 @@ const ModelDetails = () => {
           </p>
           <p className="text-gray-700">
             <span className="font-semibold">Description:</span> {description}
+          </p>
+
+          <p className="text-gray-700 font-semibold mb-2">
+            CreatedBy: <span className="text-[#9F62F2]">{createdBy}</span>
           </p>
 
           <p className="text-gray-900 font-semibold">

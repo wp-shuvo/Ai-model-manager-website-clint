@@ -35,7 +35,7 @@ const UpdateModel = () => {
       .then(() => {
         toast.success('✅ Successfully Update Model!');
         form.reset();
-        navigate('/allmodels');
+        navigate(`/modeldetails/${_id}`);
       })
       .catch(err => {
         console.log(err.message);

@@ -5,7 +5,7 @@ import getStartedImg from '../../assets/staticImage.jpeg';
 const GetStarted = () => {
   return (
     <section className="py-20 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-10 items-center">
         <div className="text-center md:text-left">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4 leading-20">
             Ready to Manage Your{' '}
