@@ -1,16 +1,91 @@
-# React + Vite
+# 🤖 AI Model Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌐 View Live Project
 
-Currently, two official plugins are available:
+👉 [View Live Project](https://ai-model-manager-website-clint.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📘 Project Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**AI Model Manager** is a modern web application designed to **manage an
+inventory of AI models**.  
+It allows users to easily **add**, **view**, **edit**, and **delete** model
+entries, helping developers and researchers maintain an organized collection of
+AI models with essential details such as:
 
-## Expanding the ESLint configuration
+- Model Name
+- Framework
+- Use Case
+- Dataset
+- Description
+- Image or Thumbnail
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🎯 Purpose
+
+The main goal of **AI Model Manager** is to simplify how users track and
+organize their AI models.  
+Whether you’re managing models for research, production, or personal learning,
+this tool provides a structured and intuitive way to keep everything in one
+place.
+
+---
+
+## ✨ Key Features
+
+✅ **Add Models** — Create new entries with full details.  
+✅ **View Models** — Browse all AI models in a clean, responsive grid layout.  
+✅ **Edit Models** — Update model information easily.  
+✅ **Delete Models** — Remove models securely with confirmation prompts.  
+✅ **Search & Filter** — Quickly find specific models by name or framework.  
+✅ **Responsive Design** — Fully optimized for mobile, tablet, and desktop.  
+✅ **Firebase Authentication** — Secure login and user management.  
+✅ **Interactive UI** — Smooth animations and modals using `animate.css` and
+`sweetalert2`.
+
+---
+
+## 🧩 Tech Stack
+
+**Frontend:** React.js, Tailwind CSS  
+**Backend:** Node.js / Express.js (optional if integrated)  
+**Database:** MongoDB (optional or Firebase Firestore)  
+**Hosting:** Firebase / Vercel
+
+---
+
+## 📦 NPM Packages Used
+
+| Package          | Description                                          |
+| ---------------- | ---------------------------------------------------- |
+| **node module**  | Core Node.js dependencies for project setup          |
+| **animate.css**  | Adds beautiful animations and transitions            |
+| **firebase**     | Used for authentication and optional backend storage |
+| **react-icons**  | Provides a wide range of icons for the UI            |
+| **react-router** | Handles page routing and navigation                  |
+| **swiper**       | Enables smooth carousel/slider functionality         |
+| **tailwindcss**  | Utility-first CSS framework for responsive UI design |
+| **sweetalert2**  | Elegant popup and alert dialogs                      |
+| **axios**        | Handles API requests to the backend server           |
+
+---
+
+## ⚙️ Installation & Setup
+
+Follow these steps to run the project locally:
+
+```bash
+# 1️⃣ Clone this repository
+git clone https://github.com/wp-shuvo/Ai-model-manager-website-clint.git
+
+# 2️⃣ Navigate into the project folder
+cd ai-model-manager
+
+# 3️⃣ Install dependencies
+npm install
+
+# 4️⃣ Start the development server
+npm run dev
+```
