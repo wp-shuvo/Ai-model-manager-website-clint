@@ -26,7 +26,7 @@ const AddModel = () => {
 
     console.log('Add New Model data', newModel);
 
-    fetch('http://localhost:5001/models', {
+    fetch('https://ai-model-manager-bd-server.vercel.app/models', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

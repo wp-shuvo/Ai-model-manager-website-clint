@@ -5,19 +5,30 @@ import { useNavigate } from 'react-router';
 const ModelPurchase = () => {
   const { user } = useContext(AuthContext);
   const [models, setmodels] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5001/myModelPurchase?email=${user.email}`)
+      fetch(
+        `https://ai-model-manager-bd-server.vercel.app/myModelPurchase?email=${user.email}`
+      )
         .then(res => res.json())
         .then(data => {
           console.log('data from My model', data);
           setmodels(data);
+          setLoading(false);
         })
         .catch(error => console.log(error.message));
     }
   }, [user]);
 
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#632EE3] border-solid"></div>
+      </div>
+    );
+  }
   const handleDetails = modelId => {
     navigate(`/modeldetails/${modelId}`);
   };

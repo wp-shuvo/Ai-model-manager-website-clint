@@ -43,7 +43,9 @@ const Routes = createBrowserRouter([
       {
         path: '/modeldetails/:id',
         loader: ({ params }) =>
-          fetch(`http://localhost:5001/modeldetails/${params.id}`),
+          fetch(
+            `https://ai-model-manager-bd-server.vercel.app/modeldetails/${params.id}`
+          ),
         element: (
           <PrivateRoutes>
             <ModelDetails />
@@ -53,7 +55,9 @@ const Routes = createBrowserRouter([
       {
         path: '/updatemodel/:id',
         loader: ({ params }) =>
-          fetch(`http://localhost:5001/modeldetails/${params.id}`),
+          fetch(
+            `https://ai-model-manager-bd-server.vercel.app/modeldetails/${params.id}`
+          ),
         element: (
           <PrivateRoutes>
             <UpdateModel />

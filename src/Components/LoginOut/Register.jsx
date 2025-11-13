@@ -52,28 +52,7 @@ const Register = () => {
 
     createUser(email, password)
       .then(result => {
-        // console.log(result.user);
         setErrorInvalid('');
-        // const newUser = {
-        //   name: name,
-        //   email: email,
-        //   image: photoURL,
-        // };
-        // // create User in the database
-        // fetch('http://localhost:5001/users', {
-        //   method: 'POST',
-        //   headers: {
-        //     'content-type': 'application/json',
-        //   },
-        //   body: JSON.stringify(newUser),
-        // })
-        //   .then(res => res.json())
-        //   .then(data => {
-        //     console.log('data after user save', data);
-        //   })
-        //   .catch(error => {
-        //     console.log(error.message);
-        //   });
         toast.success('✅ Account created successfully!');
         setUser({
           ...result.user,

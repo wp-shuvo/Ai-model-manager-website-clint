@@ -4,9 +4,9 @@ import RecentModel from '../Components/AiModels/RecentModel';
 import AboutAIModels from '../Components/StaticSection/AboutAIModels';
 import GetStarted from '../Components/StaticSection/GetStarted';
 
-const LatestmodelsPromise = fetch('http://localhost:5001/latest-models').then(
-  res => res.json()
-);
+const LatestmodelsPromise = fetch(
+  'https://ai-model-manager-bd-server.vercel.app/latest-models'
+).then(res => res.json());
 
 const Home = () => {
   return (

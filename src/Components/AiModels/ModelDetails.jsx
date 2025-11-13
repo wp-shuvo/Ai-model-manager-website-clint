@@ -34,17 +34,18 @@ const ModelDetails = () => {
         buyerEmail: user?.email,
       };
 
-      // Add to purchasedModels collection
-      const res = await fetch('http://localhost:5001/purchasedModels', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(purchaseData),
-      });
+      const res = await fetch(
+        'https://ai-model-manager-bd-server.vercel.app/purchasedModels',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(purchaseData),
+        }
+      );
 
       if (res.ok) {
-        //Increment purchase count
         const updateRes = await fetch(
-          `http://localhost:5001/models/${_id}/purchase`,
+          `https://ai-model-manager-bd-server.vercel.app/models/${_id}/purchase`,
           {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
@@ -130,7 +131,9 @@ const ModelDetails = () => {
           </p>
 
           <p className="text-gray-900 font-semibold">
-            Purchased {purchaseCount} {purchaseCount === 1 ? 'time' : 'times'}
+            Purchased:{' '}
+            <span className="text-[#9F62F2] font-bold">{purchaseCount}</span>{' '}
+            {purchaseCount === 1 ? 'time' : 'times'}
           </p>
 
           <div className="flex flex-wrap gap-3 mt-4">

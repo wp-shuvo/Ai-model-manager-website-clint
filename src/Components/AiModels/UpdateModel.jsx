@@ -24,7 +24,7 @@ const UpdateModel = () => {
 
     console.log('Add New Model data', newModel);
 
-    fetch(`http://localhost:5001/update-model/${_id}`, {
+    fetch(`https://ai-model-manager-bd-server.vercel.app/update-model/${_id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
